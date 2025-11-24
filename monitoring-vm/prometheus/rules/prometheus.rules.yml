@@ -1,0 +1,19 @@
+groups:
+  - name: nginx-performance.rules
+    rules:
+      - alert: NginxHighAverageResponseTime
+        expr: histogram_quantile(0.95, sum(rate(nginx_http_request_duration_seconds_bucket[5m])) by (le)) > 1
+        for: 2m
+        labels:
+          severity: page
+        annotations:
+          summary: "Nginx 95th percentile response time > 1s"
+          description: "Nginx 95th percentile response time on {{ $labels.instance }} is > 1s"
+
+      - alert: NodeHighCpu
+        expr: 1 - avg(rate(node_cpu_seconds_total{mode='idle'}[2m])) by (instance) > 0.8
+        for: 2m
+        labels:
+          severity: warning
+        annotations:
+          summary: "High CPU usage on node"
