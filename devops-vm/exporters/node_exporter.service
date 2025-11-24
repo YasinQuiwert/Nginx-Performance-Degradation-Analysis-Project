@@ -1,0 +1,13 @@
+[Unit]
+Description=Node Exporter
+After=network.target
+
+[Service]
+User=nodeexp
+Group=nodeexp
+Type=simple
+ExecStart=/opt/node_exporter --web.listen-address=:9100
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
