@@ -1,4 +1,4 @@
-# 🚀 Nginx Performance Degradation Lab
+# 🚀 Nginx Performance Degradation
 
 This repository provides a **production-grade lab** for testing,
 analyzing, and diagnosing performance bottlenecks in **Nginx** using
@@ -17,8 +17,7 @@ environments.
 -   🧪 Load‑testing suite: `wrk`, `ab`, `hey`, `k6`
 -   🧠 Official Nginx slowdown diagnostic model
 -   🏗️ Complete multi‑VM environment (DevOps VM + Monitoring VM)
--   🛠️ Suitable for interviews, portfolio, and production
-    troubleshooting
+
 
 ------------------------------------------------------------------------
 
@@ -35,8 +34,8 @@ environments.
 
 ## 2️⃣ SSL / TLS Issues
 
-**Tools:** handshake testers
-**Metrics:**\
+**Tools:** handshake testers\
+**Metrics:**
 - `nginx_handshake_time_seconds`
 
 ------------------------------------------------------------------------
@@ -83,7 +82,7 @@ wrk -t4 -c200 -d60s http://DEVOPS_IP
 ### Required outputs:
 
 -   Average latency
--   95% & 99% percentile
+-   95% & 99% percentage
 -   Req/s
 -   Error counts
 
@@ -125,12 +124,9 @@ wrk -t4 -c200 -d60s http://DEVOPS_IP
 
 # 🏁 Final Result
 
-This lab provides a **complete DevOps performance ecosystem**:
-
 -   ✔️ Tests Nginx under multiple slowdown scenarios
 -   ✔️ Deep observability with Prometheus & Grafana
 -   ✔️ Identifies whether the bottleneck is Nginx or Backend
--   ✔️ Ready for portfolio, company demo, or teaching
 
 ------------------------------------------------------------------------
 
