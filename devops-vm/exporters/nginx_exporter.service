@@ -1,11 +1,19 @@
 [Unit]
 Description=Nginx Prometheus Exporter
+Description=Node Exporter
+Wants=network-online.target
 After=network.target
+After=network-online.target
+
 
 [Service]
 User=ngexp
+User=node_exporter
 Group=ngexp
+Group=node_exporter
+Type=simple
 ExecStart=/opt/nginx-prometheus-exporter -nginx.scrape-uri=http://127.0.0.1:8080/nginx_status --web.listen-address=:9113
+ExecStart=/usr/local/bin/node_exporter
 Restart=always
 
 [Install]
