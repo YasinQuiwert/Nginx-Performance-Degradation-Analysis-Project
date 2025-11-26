@@ -1,15 +1,22 @@
 global:
   resolve_timeout: 5m
+  # smtp smarthost example (replace with real SMTP)
+  smtp_smarthost: 'smtp.gothere.ir:587'
+  smtp_from: 'alertmanager@gothere.ir'
+  smtp_auth_username: 'alertmanager@gothere.ir'
+  smtp_auth_password: 'j0kej0ke0rbit'
 
 route:
-  receiver: 'console'
+  receiver: 'team-email'
+  group_wait: 10s
+  group_interval: 10m
+  repeat_interval: 1h
 
 receivers:
-  - name: 'console'
-  - name: 'email'
+  - name: 'team-email'
     email_configs:
-      - to: 'you@example.com'
-        from: 'alertmanager@example.com'
-        smarthost: 'smtp.example.com:587'
-        auth_username: 'alertmanager'
-        auth_password: 'password'
+      - to: ‘a’.mostafazadeh@gmail.com
+
+  - name: 'log'
+    webhook_configs:
+      - url: 'http://localhost:9094/'   # example, optional
