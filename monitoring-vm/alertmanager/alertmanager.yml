@@ -4,7 +4,7 @@ global:
   smtp_smarthost: 'smtp.gothere.ir:587'
   smtp_from: 'alertmanager@gothere.ir'
   smtp_auth_username: 'alertmanager@gothere.ir'
-  smtp_auth_password: 'j0kej0ke0rbit'
+  smtp_auth_password: '***********'
 
 route:
   receiver: 'team-email'
@@ -15,7 +15,7 @@ route:
 receivers:
   - name: 'team-email'
     email_configs:
-      - to: ‘a’.mostafazadeh@gmail.com
+      - to: 'yourenamil
 
   - name: 'log'
     webhook_configs:
