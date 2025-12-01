@@ -1,7 +1,7 @@
 global:
   resolve_timeout: 5m
   # smtp smarthost example (replace with real SMTP)
-  smtp_smarthost: 'smtp.gothere.ir:587'
+  smtp_smarthost: 'mail.gothere.ir:587'
   smtp_from: 'alertmanager@gothere.ir'
   smtp_auth_username: 'alertmanager@gothere.ir'
   smtp_auth_password: '***********'
